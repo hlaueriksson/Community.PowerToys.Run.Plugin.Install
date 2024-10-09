@@ -1,0 +1,181 @@
+{
+    "Name": "Awesome PowerToys Run Plugins",
+    "Version": "0.0.0",
+    "Plugins": [
+        {
+            "ID": "583D1696DC9B40C6BD7DCA116268630E",
+            "Name": "GEmojiSharp",
+            "Description": "Find and copy GitHub emoji.",
+            "Author": "hlaueriksson",
+            "Website": "https://github.com/hlaueriksson/GEmojiSharp"
+        },
+        {
+            "ID": "A86867E2D932459CBD77D176373DD657",
+            "Name": "Everything",
+            "Description": "Find files and folders instantly with Everything.",
+            "Author": "lin-ycv",
+            "Website": "https://github.com/lin-ycv/EverythingPowerToys"
+        },
+        {
+            "ID": "EY1EBAMTNIWIVLYM039DSOS5MWITDJOD",
+            "Name": "PowerTranslator",
+            "Description": "Translate text with Youdao Translation.",
+            "Author": "N0I0C0K",
+            "Website": "https://github.com/N0I0C0K/PowerTranslator"
+        },
+        {
+            "ID": "46778CB7A2FD4949A845B19EF1A6364B",
+            "Name": "WinGet",
+            "Description": "Install and manage Windows packages with WinGet.",
+            "Author": "bostrot",
+            "Website": "https://github.com/bostrot/PowerToysRunPluginWinget"
+        },
+        {
+            "ID": "EF2F634F20484459A365944EE7B07121",
+            "Name": "Lorem",
+            "Description": "Generate lorem ipsum texts.",
+            "Author": "dxn-9",
+            "Website": "https://github.com/dxn-9/prun-lorem"
+        },
+        {
+            "ID": "2FC51DBA9F0F42108E26602486C186C1",
+            "Name": "TOTP",
+            "Description": "Copy time-based two factor verify codes.",
+            "Author": "KawaiiZapic",
+            "Website": "https://github.com/KawaiiZapic/PowertoysRunTOTP"
+        },
+        {
+            "ID": "be0142a36ee54bd6ab789086d5828b4b",
+            "Name": "Scoop",
+            "Description": "Install and manage Windows packages with Scoop.",
+            "Author": "Quriz",
+            "Website": "https://github.com/Quriz/PowerToysRunScoop"
+        },
+        {
+            "ID": "10733f2de88e4348aa7a340d25ebcca2",
+            "Name": "InputTyper",
+            "Description": "Type text as if sent from a keyboard.",
+            "Author": "CoreyHayward",
+            "Website": "https://github.com/CoreyHayward/PowerToys-Run-InputTyper"
+        },
+        {
+            "ID": "EF1F634F20484459A3679B4DE7B07999",
+            "Name": "CurrencyConverter",
+            "Description": "Convert traditional and cryptocurrency with the latest exchange rates.",
+            "Author": "Advaith3600",
+            "Website": "https://github.com/Advaith3600/PowerToys-Run-Currency-Converter"
+        },
+        {
+            "ID": "D73A7EF0633F4C82A14454FFD848F447",
+            "Name": "EdgeFavorite",
+            "Description": "Open Microsoft Edge favorites.",
+            "Author": "davidegiacometti",
+            "Website": "https://github.com/davidegiacometti/PowerToys-Run-EdgeFavorite"
+        },
+        {
+            "ID": "582B10E1E9144702B5E18C3EDC3FF466",
+            "Name": "GitKraken",
+            "Description": "Open GitKraken repositories.",
+            "Author": "davidegiacometti",
+            "Website": "https://github.com/davidegiacometti/PowerToys-Run-GitKraken"
+        },
+        {
+            "ID": "D0998A1863424336A86A2B6E936C0E8E",
+            "Name": "VisualStudio",
+            "Description": "Open recent solutions in Visual Studio.",
+            "Author": "davidegiacometti",
+            "Website": "https://github.com/davidegiacometti/PowerToys-Run-VisualStudio"
+        },
+        {
+            "ID": "2d9351ea495848d98f4771c27ac211e4",
+            "Name": "ClipboardManager",
+            "Description": "Search and paste from clipboard history.",
+            "Author": "CoreyHayward",
+            "Website": "https://github.com/CoreyHayward/PowerToys-Run-ClipboardManager"
+        },
+        {
+            "ID": "47B63DBFBDEE4F9C85EBA5F6CD69E243",
+            "Name": "GitHubRepo",
+            "Description": "Open GitHub repositories.",
+            "Author": "8LWXpg",
+            "Website": "https://github.com/8LWXpg/PowerToysRun-GitHubRepo"
+        },
+        {
+            "ID": "78844AE082E24C0C8AC9DB222FF67317",
+            "Name": "ProcessKiller",
+            "Description": "Kill Windows processes.",
+            "Author": "8LWXpg",
+            "Website": "https://github.com/8LWXpg/PowerToysRun-ProcessKiller"
+        },
+        {
+            "ID": "B5E595872B8068104D5AD6BBE39A6664",
+            "Name": "WebSearchShortcut",
+            "Description": "Search with predefined search engines.",
+            "Author": "Daydreamer-riri",
+            "Website": "https://github.com/Daydreamer-riri/PowerToys-Run-WebSearchShortcut"
+        },
+        {
+            "ID": "778f24fc48714097b30303f83d5bed6a",
+            "Name": "UnicodeInput",
+            "Description": "Find and copy Unicode characters with Agda-style shorthands.",
+            "Author": "nathancartlidge",
+            "Website": "https://github.com/nathancartlidge/powertoys-run-unicode"
+        },
+        {
+            "ID": "0cd68088246649a38205c7641df39db0",
+            "Name": "Timer",
+            "Description": "Set and manage timers.",
+            "Author": "CoreyHayward",
+            "Website": "https://github.com/CoreyHayward/PowerToys-Run-Timer"
+        },
+        {
+            "ID": "JSAKDJKALSJDIWDI1872Hdhad139319A",
+            "Name": "HexInspector",
+            "Description": "Convert numbers between bases.",
+            "Author": "NaroZeol",
+            "Website": "https://github.com/NaroZeol/PowerHexInspector"
+        },
+        {
+            "ID": "550A34D0CFA845449989D581149B3D9C",
+            "Name": "LocalLLM",
+            "Description": "Query local LLM models with Ollama.",
+            "Author": "Darkdriller",
+            "Website": "https://github.com/Darkdriller/PowerToys-Run-LocalLLm"
+        },
+        {
+            "ID": "888A6F53700D4F16841160FC0E8AAC2A",
+            "Name": "Bang",
+            "Description": "Search websites with DuckDuckGo !Bangs.",
+            "Author": "hlaueriksson",
+            "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugins#bang"
+        },
+        {
+            "ID": "8738EC80820A4BF89FA9C3AED709AF9A",
+            "Name": "DenCode",
+            "Description": "Encoding & Decoding.",
+            "Author": "hlaueriksson",
+            "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugins#dencode"
+        },
+        {
+            "ID": "0CB159EBD5394A01A8CE995982FE2622",
+            "Name": "Dice",
+            "Description": "Roleplaying Dice Roller.",
+            "Author": "hlaueriksson",
+            "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugins#dice"
+        },
+        {
+            "ID": "0B47DD2677CD41E9927218E9D67EFAD1",
+            "Name": "Need",
+            "Description": "Store things you need, but can't remember.",
+            "Author": "hlaueriksson",
+            "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugins#need"
+        },
+        {
+            "ID": "69340CBAA6A54D73861135D4AB7A5276",
+            "Name": "Twitch",
+            "Description": "Browse, search and view streams on Twitch.",
+            "Author": "hlaueriksson",
+            "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugins#twitch"
+        }
+    ]
+}
