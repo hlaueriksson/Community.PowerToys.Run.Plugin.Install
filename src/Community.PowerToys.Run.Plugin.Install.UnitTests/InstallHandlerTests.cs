@@ -1,5 +1,4 @@
-using Community.PowerToys.Run.Plugin.Abstractions.Infrastructure;
-using Community.PowerToys.Run.Plugin.Abstractions.Plugin;
+using Community.PowerToys.Run.Plugin.Abstractions;
 using Community.PowerToys.Run.Plugin.Install.Models;
 using FluentAssertions;
 using LazyCache;
