@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "community.powertoys.run.plugin.lint": {
+      "version": "0.2.0",
+      "commands": [
+        "ptrun-lint"
+      ],
+      "rollForward": false
+    }
+  }
+}
