@@ -1,0 +1,66 @@
+﻿- namespace Generator.Models
++ using System.Runtime.InteropServices;
++ 
++ namespace Community.PowerToys.Run.Plugin.Install.Models
+  {
+      public class Release
+      {
+          public string Url { get; set; }
+          public string TagName { get; set; }
+          public string Name { get; set; }
+          public DateTime CreatedAt { get; set; }
+          public DateTime PublishedAt { get; set; }
+          public IEnumerable<Asset> Assets { get; set; }
+  
+-         public IEnumerable<string> Validate()
++         public Asset? Asset
++         {
++             get
++             {
++                 if (Assets == null)
++                 {
++                     return null;
++                 }
++ 
++                 if (Assets.Count() == 1 && Assets.First().Name?.Contains(OppositePlatform(), StringComparison.OrdinalIgnoreCase) == false)
++                 {
++                     return Assets.First();
++                 }
++ 
++                 return Assets.SingleOrDefault(x => x.Name?.Contains(Platform(), StringComparison.OrdinalIgnoreCase) == true);
++ 
++                 string Platform() => RuntimeInformation.ProcessArchitecture.ToString();
++                 string OppositePlatform()
+                  {
+-             if (!Assets.Any())
++                     return RuntimeInformation.ProcessArchitecture switch
+                      {
+-                 yield return "Assets missing";
++                         Architecture.X64 => Architecture.Arm64.ToString(),
++                         Architecture.Arm64 => Architecture.X64.ToString(),
++                         _ => string.Empty,
++                     };
++                 }
+              }
+          }
++ 
++         public string ToolTipText =>
++ $"""
++ Release: {TagName}
++ {Asset?.ToolTipText}
++ """;
+      }
+  
+      public class Asset
+      {
+          public string Url { get; set; }
+          public string Name { get; set; }
+          public int Size { get; set; }
+          public int DownloadCount { get; set; }
+          public DateTime CreatedAt { get; set; }
+          public DateTime UpdatedAt { get; set; }
++ 
++         public string ToolTipText => $"{Name} | 📦 {Size.FormatSize()} | 💾 {DownloadCount} downloads";
+      }
+  }
+  

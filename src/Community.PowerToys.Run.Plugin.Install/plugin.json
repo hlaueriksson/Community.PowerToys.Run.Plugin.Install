@@ -1,0 +1,14 @@
+{
+  "ID": "1678AF8C90A341628E5135CD3C004F46",
+  "ActionKeyword": "install",
+  "IsGlobal": false,
+  "Name": "Install",
+  "Author": "hlaueriksson",
+  "Version": "0.0.0",
+  "Language": "csharp",
+  "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install",
+  "ExecuteFileName": "Community.PowerToys.Run.Plugin.Install.dll",
+  "IcoPathDark": "Images\\install.dark.png",
+  "IcoPathLight": "Images\\install.light.png",
+  "DynamicLoading": true
+}
