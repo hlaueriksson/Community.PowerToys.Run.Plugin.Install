@@ -22,7 +22,7 @@ namespace Generator
                 throw new ArgumentException("Invalid path", nameof(path));
             }
 
-            if (uri.IsFile)
+            if (!uri.IsAbsoluteUri || uri.IsFile)
             {
                 return await File.ReadAllTextAsync(path);
             }

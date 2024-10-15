@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # Secrets
 local.settings.json
+
+# Generator
+src/Generator/awesome.json
