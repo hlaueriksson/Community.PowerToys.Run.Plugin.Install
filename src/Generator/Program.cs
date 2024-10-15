@@ -32,4 +32,5 @@ foreach (var plugin in awesome.Plugins)
 }
 
 content = JsonSerializer.Serialize(awesome);
+output.EnsureDirectoryExists();
 await File.WriteAllTextAsync(output, content);

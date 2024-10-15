@@ -2,10 +2,6 @@
 name: pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -39,13 +35,13 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Generate
-        run: dotnet run --project ./src/Generator -- "awesome.json" "./src/Generator/awesome.json" "${{ secrets.PersonalAccessToken }}"
+        run: dotnet run --project ./src/Generator -- "awesome.json" "./.pages/awesome.json" "${{ secrets.PersonalAccessToken }}"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload generated file
-          path: './src/Generator/awesome.json'
+          path: './.pages/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

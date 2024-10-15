@@ -34,6 +34,22 @@ namespace Generator
         }
 
         /// <summary>
+        /// Ensures that the directory exists.
+        /// </summary>
+        /// <param name="path">The path to a file.</param>
+        public static void EnsureDirectoryExists(this string path)
+        {
+            var directory = Path.GetDirectoryName(path);
+
+            ArgumentNullException.ThrowIfNull(directory, nameof(path));
+
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+        }
+
+        /// <summary>
         /// Gets options from GitHub repository URL.
         /// </summary>
         /// <param name="url">The URL.</param>

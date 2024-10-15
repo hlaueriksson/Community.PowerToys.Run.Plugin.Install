@@ -401,4 +401,4 @@ FodyWeavers.xsd
 local.settings.json
 
 # Generator
-src/Generator/awesome.json
+.pages/
