@@ -33,6 +33,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Generate
+        run: dotnet run --project ./src/Generator -- "awesome.json" "./src/Generator/awesome.json" "${{ secrets.PersonalAccessToken }}"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
