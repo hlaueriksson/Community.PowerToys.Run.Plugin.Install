@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
+    <title>Community.PowerToys.Run.Plugin.Install</title>
+    <style type="text/css" media="screen">
+      body {
+        background-color: #f1f1f1;
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
+
+      a { color: #4183c4; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
+      p { color: rgba(0, 0, 0, 0.8); margin: 20px 0; line-height: 1.6; }
+
+      ul { list-style: none; margin: 25px 0; padding: 0; }
+      li { display: table-cell; font-weight: bold; width: 1%; }
+
+      .logo { display: inline-block; margin-top: 35px; }
+      .logo-img-2x { display: none; }
+      @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
+        .logo-img-1x { display: none; }
+        .logo-img-2x { display: inline-block; }
+      }
+
+      #suggestions {
+        margin-top: 35px;
+        color: #ccc;
+      }
+      #suggestions a {
+        color: #666666;
+        font-weight: 200;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <h1>Install</h1>
+      <p>Install <strong>awesome</strong> community PowerToys Run plugins⬇️🔌📦</p>
+
+      <p>
+        Plugin source:<br/>
+        <a href="awesome.json"><code>awesome.json</code></a>
+      </p>
+
+      <p>
+        Repository:<br/>
+        <a href="https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install">https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install</a>
+      </p>
+
+      <p>
+        <strong>Awesome</strong> PowerToys Run Plugins:<br/>
+        <a href="https://github.com/hlaueriksson/awesome-powertoys-run-plugins">https://github.com/hlaueriksson/awesome-powertoys-run-plugins</a>
+      </p>
+
+      <div id="suggestions">
+        <a href="https://henrik.laueriksson.com">Henrik Lau Eriksson</a> &mdash;
+        <a href="https://twitter.com/hlaueriksson">@hlaueriksson</a>
+      </div>
+
+      <a href="https://github.com/microsoft/PowerToys" class="logo logo-img-1x">
+        <img width="32" height="32" title="" alt="" src="data:image/png;base64,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">
+      </a>
+
+      <a href="https://github.com/microsoft/PowerToys" class="logo logo-img-2x">
+        <img width="32" height="32" title="" alt="" src="data:image/png;base64,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">
+      </a>
+    </div>
+  </body>
+</html>
