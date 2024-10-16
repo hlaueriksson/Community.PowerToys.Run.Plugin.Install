@@ -2,6 +2,8 @@
 name: pages
 
 on:
+  schedule:
+    - cron: "0 0 * * *" # Daily at 00:00 UTC
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
