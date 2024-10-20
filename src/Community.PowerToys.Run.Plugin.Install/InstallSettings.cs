@@ -21,7 +21,7 @@ namespace Community.PowerToys.Run.Plugin.Install
                 new()
                 {
                     Key = nameof(PluginSource),
-                    DisplayLabel = "Plugin Source",
+                    DisplayLabel = "Plugin source",
                     DisplayDescription = "URL or path to the plugin source file",
                     PluginOptionType = PluginAdditionalOption.AdditionalOptionType.Textbox,
                     TextValue = PluginSource,
