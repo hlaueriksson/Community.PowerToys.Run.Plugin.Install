@@ -78,7 +78,7 @@ namespace Community.PowerToys.Run.Plugin.Install
 
             var results = Handler.Query(query);
 
-            return results.Select(Map).ToList();
+            return [.. results.Select(Map)];
 
             Result Map(Pair pair) => new()
             {
@@ -209,7 +209,7 @@ namespace Community.PowerToys.Run.Plugin.Install
                 Action = _ => Handler.OpenPluginFolder(pair),
             };
 
-            return GetResults().ToList();
+            return [.. GetResults()];
 
             IEnumerable<ContextMenuResult> GetResults()
             {

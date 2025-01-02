@@ -5,9 +5,7 @@ namespace Generator
     /// <summary>
     /// Generator extensions.
     /// </summary>
-#pragma warning disable CA1724 // Type names should not match namespaces
     public static partial class Extensions
-#pragma warning restore CA1724 // Type names should not match namespaces
     {
         /// <summary>
         /// Gets the content of a file.

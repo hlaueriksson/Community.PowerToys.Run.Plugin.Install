@@ -1,8 +1,6 @@
 namespace Generator.Models
 {
-#pragma warning disable CA1724 // Type names should not match namespaces
     public class Plugin
-#pragma warning restore CA1724 // Type names should not match namespaces
     {
         public string ID { get; set; }
         public string Name { get; set; }

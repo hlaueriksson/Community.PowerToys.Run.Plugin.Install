@@ -32,8 +32,8 @@ namespace Community.PowerToys.Run.Plugin.Install.Models
                 {
                     return RuntimeInformation.ProcessArchitecture switch
                     {
-                        Architecture.X64 => Architecture.Arm64.ToString(),
-                        Architecture.Arm64 => Architecture.X64.ToString(),
+                        Architecture.X64 => nameof(Architecture.Arm64),
+                        Architecture.Arm64 => nameof(Architecture.X64),
                         _ => string.Empty,
                     };
                 }
