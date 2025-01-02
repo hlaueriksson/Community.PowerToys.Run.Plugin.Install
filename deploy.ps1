@@ -1,5 +1,5 @@
 <#PSScriptInfo
-.VERSION 0.0.0
+.VERSION 0.87.0
 .GUID 2d1e62b4-4b98-4fad-98b2-2cc1db4694b8
 .AUTHOR Henrik Lau Eriksson
 .COMPANYNAME
@@ -42,7 +42,7 @@ Stop-Process -Name "PowerToys" -Force -ErrorAction SilentlyContinue
 
 dotnet build -c Release /p:TF_BUILD=true /p:Platform=$platform
 
-$dependencies = @("PowerToys.Common.UI.dll", "PowerToys.ManagedCommon.dll", "PowerToys.Settings.UI.Lib.dll", "Wox.Infrastructure.dll", "Wox.Plugin.dll")
+$dependencies = @("PowerToys.Common.UI.*", "PowerToys.ManagedCommon.*", "PowerToys.Settings.UI.Lib.*", "Wox.Infrastructure.*", "Wox.Plugin.*")
 
 # Plugins
 $folders = Get-ChildItem -Recurse -Filter "plugin.json" | Where-Object { $_.FullName -notlike "*\bin\*" } | ForEach-Object { $_.Directory } | Sort-Object -Unique

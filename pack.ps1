@@ -1,5 +1,5 @@
 <#PSScriptInfo
-.VERSION 0.0.0
+.VERSION 0.87.0
 .GUID 58d7b8e8-fa18-485d-baaf-4c413181280b
 .AUTHOR Henrik Lau Eriksson
 .COMPANYNAME
@@ -33,7 +33,7 @@
 # Clean
 Get-ChildItem -Path "." -Directory -Include "bin", "obj" -Recurse | Remove-Item -Recurse -Force
 
-$dependencies = @("PowerToys.Common.UI.dll", "PowerToys.ManagedCommon.dll", "PowerToys.Settings.UI.Lib.dll", "Wox.Infrastructure.dll", "Wox.Plugin.dll")
+$dependencies = @("PowerToys.Common.UI.*", "PowerToys.ManagedCommon.*", "PowerToys.Settings.UI.Lib.*", "Wox.Infrastructure.*", "Wox.Plugin.*")
 
 # Plugins
 $folders = Get-ChildItem -Recurse -Filter "plugin.json" | Where-Object { $_.FullName -notlike "*\bin\*" } | ForEach-Object { $_.Directory } | Sort-Object -Unique
