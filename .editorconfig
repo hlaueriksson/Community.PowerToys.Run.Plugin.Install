@@ -190,6 +190,9 @@ dotnet_diagnostic.CS8618.severity = none
 dotnet_diagnostic.SA1516.severity = none
 dotnet_diagnostic.SA1600.severity = none
 
+[**/Generator/**]
+dotnet_diagnostic.CA1515.severity = none
+
 [**/Generator/*.cs]
 dotnet_diagnostic.CA1303.severity = none
 dotnet_diagnostic.CA1848.severity = none
