@@ -40,6 +40,41 @@ namespace Community.PowerToys.Run.Plugin.Install.UnitTests
         }
 
         [TestMethod]
+        public void Actions_should_be_empty_when_cache_is_valid()
+        {
+            var pairs = new List<Pair>
+            {
+                new() { Plugin = new() { Repository = new() { Url = "https://github.com/hlaueriksson/GEmojiSharp" } } },
+            };
+            _cache.Get<List<Pair>>(InstallHandler.CacheKey).Returns(pairs);
+
+            var result = _subject.Actions(new Query(""));
+            result.Should().BeEmpty();
+        }
+
+        [TestMethod]
+        public void Actions_should_include_Validate_and_Reload_when_cache_is_invalid()
+        {
+            _cache.Get<List<Pair>>(InstallHandler.CacheKey).Returns((List<Pair>)null);
+
+            var result = _subject.Actions(new Query(""));
+            result.Should().BeEquivalentTo([ActionType.Validate, ActionType.Reload]);
+        }
+
+        [TestMethod]
+        public void Actions_should_include_Reload_when_query_for_reload()
+        {
+            var pairs = new List<Pair>
+            {
+                new() { Plugin = new() { Repository = new() { Url = "https://github.com/hlaueriksson/GEmojiSharp" } } },
+            };
+            _cache.Get<List<Pair>>(InstallHandler.CacheKey).Returns(pairs);
+
+            var result = _subject.Actions(new Query("reload"));
+            result.Should().BeEquivalentTo([ActionType.Reload]);
+        }
+
+        [TestMethod]
         public void Query_should_only_return_valid_pairs()
         {
             var pairs = new List<Pair>

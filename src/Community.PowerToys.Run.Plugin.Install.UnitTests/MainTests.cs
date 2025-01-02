@@ -20,6 +20,17 @@ namespace Community.PowerToys.Run.Plugin.Install.UnitTests
         }
 
         [TestMethod]
+        public void Query_should_return_actions()
+        {
+            var query = new Query("");
+            _handler.Actions(query).Returns([ActionType.Validate, ActionType.Reload]);
+
+            var results = _subject.Query(query);
+
+            results.Count.Should().Be(2);
+        }
+
+        [TestMethod]
         public void Query_should_return_results()
         {
             var query = new Query("");

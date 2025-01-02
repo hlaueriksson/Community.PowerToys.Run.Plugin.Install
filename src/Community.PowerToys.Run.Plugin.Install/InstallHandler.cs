@@ -18,13 +18,15 @@ namespace Community.PowerToys.Run.Plugin.Install
         /// Initialize the handler with the given <see cref="PluginInitContext"/>.
         /// </summary>
         /// <param name="context">The plugin context.</param>
-        void Init(PluginInitContext context);
+        /// <returns><c>true</c> if successfully initialized; otherwise, <c>false</c>.</returns>
+        bool Init(PluginInitContext context);
 
         /// <summary>
-        /// Validates the cache.
+        /// Returns a filtered list of actions, based on the given query and plugin state.
         /// </summary>
-        /// <returns><c>true</c> if the cache is valid; otherwise, <c>false</c>.</returns>
-        bool IsValid();
+        /// <param name="query">The query to filter the list.</param>
+        /// <returns>A filtered list, can be empty when nothing was found.</returns>
+        IEnumerable<ActionType> Actions(Query query);
 
         /// <summary>
         /// Returns a filtered list of awesome plugins, based on the given query.
@@ -132,7 +134,7 @@ namespace Community.PowerToys.Run.Plugin.Install
         private StringMatcher StringMatcher { get; }
 
         /// <inheritdoc/>
-        public void Init(PluginInitContext context)
+        public bool Init(PluginInitContext context)
         {
             ArgumentNullException.ThrowIfNull(context);
 
@@ -146,7 +148,7 @@ namespace Community.PowerToys.Run.Plugin.Install
                 if (content == null)
                 {
                     Log.Error("Plugin source invalid.", GetType());
-                    return;
+                    return false;
                 }
 
                 var awesomePlugins = JsonSerializer.Deserialize<Awesome>(content);
@@ -164,13 +166,26 @@ namespace Community.PowerToys.Run.Plugin.Install
 #pragma warning restore CA1031 // Do not catch general exception types
             {
                 Log.Exception("Init failed.", ex, GetType());
+                return false;
             }
+
+            return true;
         }
 
         /// <inheritdoc/>
-        public bool IsValid()
+        public IEnumerable<ActionType> Actions(Query query)
         {
-            return Cache.TryGetValue(CacheKey, out List<Pair> pairs) && pairs.Count != 0;
+            var pairs = Cache.Get<List<Pair>>(CacheKey);
+
+            if (pairs == null || pairs.Count == 0)
+            {
+                yield return ActionType.Validate;
+            }
+
+            if (pairs == null || pairs.Count == 0 || query?.Search.Equals("reload", StringComparison.OrdinalIgnoreCase) == true)
+            {
+                yield return ActionType.Reload;
+            }
         }
 
         /// <inheritdoc/>

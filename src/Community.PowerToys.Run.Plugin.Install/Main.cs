@@ -71,16 +71,19 @@ namespace Community.PowerToys.Run.Plugin.Install
         /// <returns>A filtered list, can be empty when nothing was found.</returns>
         public List<Result> Query(Query query)
         {
-            if (!Handler.IsValid())
-            {
-                return Invalid();
-            }
-
+            var actions = Handler.Actions(query);
             var results = Handler.Query(query);
 
-            return [.. results.Select(Map)];
+            return [.. actions.Select(MapAction), .. results.Select(MapPair)];
 
-            Result Map(Pair pair) => new()
+            Result MapAction(ActionType action) => action switch
+            {
+                ActionType.Validate => Validate(),
+                ActionType.Reload => Reload(),
+                _ => throw new NotImplementedException(),
+            };
+
+            Result MapPair(Pair pair) => new()
             {
                 IcoPath = GetIconPath(pair),
                 Title = pair.Plugin.Name,
@@ -91,16 +94,24 @@ namespace Community.PowerToys.Run.Plugin.Install
                 ContextData = pair,
             };
 
-            List<Result> Invalid() =>
-            [
+            Result Validate() =>
                 new()
                 {
-                    IcoPath = GetIconPathByName("Warning"),
-                    Title = "Invalid plugin source",
+                    IcoPath = GetIconPathByName("validate"),
+                    Title = "Validate plugin source",
                     SubTitle = "Make sure the URL or path to the plugin source file is valid",
                     ToolTipData = new ToolTipData("Help", "1. Open PowerToys Settings\n2. Click PowerToys Run\n3. Scroll down and expand the Install plugin\n4. Double check the Plugin Source\n5. Clear the field to reset to the default value"),
-                },
-            ];
+                };
+
+            Result Reload() =>
+                new()
+                {
+                    IcoPath = GetIconPathByName("reload"),
+                    Title = "Reload",
+                    SubTitle = "Reload plugin source: " + Settings.PluginSource,
+                    ToolTipData = new ToolTipData("Reload", "This will reload the plugin source file from the URL or path provided in the settings."),
+                    Action = _ => Handler.Init(Context!),
+                };
 
             string GetIconPath(Pair pair)
             {
