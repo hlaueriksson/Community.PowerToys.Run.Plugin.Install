@@ -138,6 +138,7 @@ namespace Community.PowerToys.Run.Plugin.Install
 
             Metadata = context.CurrentPluginMetadata;
             Api = context.API;
+            DefaultBrowserInfo.UpdateIfTimePassed();
 
             try
             {
