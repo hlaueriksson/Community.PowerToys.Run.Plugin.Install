@@ -14,7 +14,7 @@ Plugin source:
 
 ## Installation
 
-This plugin has been developed and tested with PowerToys `v0.85.0`.
+This plugin has been developed and tested with PowerToys `v0.87.1`.
 
 Prerequisites:
 
@@ -62,6 +62,14 @@ install outdated
 ```
 
 - Display and update outdated packages
+
+Reload plugin source:
+
+```
+install reload
+```
+
+- Reloads the plugin source file from the URL or path provided in the settings
 
 The plugins are installed/updated/uninstalled via a [PowerShell script](src/Community.PowerToys.Run.Plugin.Install/install.ps1).
 
