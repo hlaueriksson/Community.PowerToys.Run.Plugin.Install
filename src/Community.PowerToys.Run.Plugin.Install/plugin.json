@@ -4,7 +4,7 @@
   "IsGlobal": false,
   "Name": "Install",
   "Author": "hlaueriksson",
-  "Version": "0.1.0",
+  "Version": "0.2.0",
   "Language": "csharp",
   "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install",
   "ExecuteFileName": "Community.PowerToys.Run.Plugin.Install.dll",
