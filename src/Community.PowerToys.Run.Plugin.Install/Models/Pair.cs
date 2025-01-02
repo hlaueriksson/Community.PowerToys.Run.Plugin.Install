@@ -44,7 +44,7 @@ namespace Community.PowerToys.Run.Plugin.Install.Models
 
                 return latestVersion > currentVersion;
 
-                Version GetVersion(string version)
+                static Version GetVersion(string version)
                 {
 #pragma warning disable CA1867 // Use char overload
                     if (version.StartsWith("v", StringComparison.OrdinalIgnoreCase))

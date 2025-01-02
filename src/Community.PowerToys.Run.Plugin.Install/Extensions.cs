@@ -9,9 +9,7 @@ namespace Community.PowerToys.Run.Plugin.Install
     /// <summary>
     /// Plugin extensions.
     /// </summary>
-#pragma warning disable CA1724 // Type names should not match namespaces
     public static class Extensions
-#pragma warning restore CA1724 // Type names should not match namespaces
     {
         /// <summary>
         /// Gets the content of a file.
