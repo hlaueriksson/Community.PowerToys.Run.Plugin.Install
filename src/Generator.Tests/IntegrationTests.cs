@@ -146,7 +146,7 @@ namespace Generator.Tests
                     var response = await client.PostAsync(url, content);
                     var scan = await response.Content.ReadFromJsonAsync<VirusTotalScanResponse>();
 
-                    VirusTotalAnalysisResponse? analysis = null;
+                    VirusTotalAnalysisResponse analysis = null;
                     while (analysis?.data.attributes.status != "completed")
                     {
                         await Task.Delay(TimeSpan.FromSeconds(5));
