@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Community.PowerToys.Run.Plugin.Abstractions" Version="0.1.0" />
-    <PackageReference Include="Community.PowerToys.Run.Plugin.Dependencies" Version="0.85.0" />
+    <PackageReference Include="Community.PowerToys.Run.Plugin.Dependencies" Version="0.87.1" />
     <PackageReference Include="LazyCache" Version="2.4.0" />
   </ItemGroup>
 
