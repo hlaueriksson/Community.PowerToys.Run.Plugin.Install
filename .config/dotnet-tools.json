@@ -3,7 +3,7 @@
   "isRoot": true,
   "tools": {
     "community.powertoys.run.plugin.lint": {
-      "version": "0.2.0",
+      "version": "0.4.0",
       "commands": [
         "ptrun-lint"
       ],
