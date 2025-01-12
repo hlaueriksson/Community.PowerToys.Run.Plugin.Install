@@ -122,11 +122,13 @@ namespace Generator.Tests
         [Test]
         public async Task awesome_json_VirusTotal()
         {
+            // dotnet run --project ./src/Generator -- "awesome.json" "./.pages/awesome.json" "github_pat_"
+
             var config = new ConfigurationBuilder()
                 .AddJsonFile("local.settings.json")
                 .Build();
 
-            var awesome = JsonSerializer.Deserialize<Awesome>(File.ReadAllText(@"..\..\..\..\..\cache.json"));
+            var awesome = JsonSerializer.Deserialize<Awesome>(File.ReadAllText(@"..\..\..\..\..\.pages\awesome.json"));
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("accept", "application/json");
