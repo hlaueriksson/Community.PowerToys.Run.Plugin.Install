@@ -143,6 +143,27 @@
             "Website": "https://github.com/Darkdriller/PowerToys-Run-LocalLLm"
         },
         {
+            "ID": "FEAFCFE212C04174A6CA07DB644DDB86",
+            "Name": "JohnnyDecimal",
+            "Description": "Navigate through your JohnnyDecimal system.",
+            "Author": "seguri",
+            "Website": "https://github.com/seguri/PowerToys-Run-JohnnyDecimal"
+        },
+        {
+            "ID": "D73A7EF0633F4C82A14454FFD848F444",
+            "Name": "BrowserFavorite",
+            "Description": "Quickly open your browser bookmarks.",
+            "Author": "Der-Penz",
+            "Website": "https://github.com/Der-Penz/PowerToys-Run-BrowserFavorite"
+        },
+        {
+            "ID": "64861420A0CA442DAE1C35054E15A4B7",
+            "Name": "UniversalSearchSuggestions",
+            "Description": "Search and get suggestions from search engines.",
+            "Author": "Fefedu973",
+            "Website": "https://github.com/Fefedu973/PowerToys-Run-Universal-Search-Suggestions-Plugin/"
+        },
+        {
             "ID": "888A6F53700D4F16841160FC0E8AAC2A",
             "Name": "Bang",
             "Description": "Search websites with DuckDuckGo !Bangs.",
