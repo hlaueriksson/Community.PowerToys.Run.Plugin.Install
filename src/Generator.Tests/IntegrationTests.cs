@@ -171,13 +171,10 @@ namespace Generator.Tests
 
         static (int ExitCode, string StandardOutput, string StandardError) Lint(string url)
         {
-            var uri = new Uri(url);
-            url = uri.GetLeftPart(UriPartial.Path);
-
             var startInfo = new ProcessStartInfo
             {
-                FileName = "dotnet",
-                Arguments = "ptrun-lint " + url,
+                FileName = "ptrun-lint",
+                Arguments = url,
                 WindowStyle = ProcessWindowStyle.Hidden,
                 CreateNoWindow = false,
                 UseShellExecute = false,
