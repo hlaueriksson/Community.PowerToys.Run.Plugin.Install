@@ -23,7 +23,7 @@ Prerequisites:
 
 Then:
 
-1. Download the `.zip` file from the latest [release](releases/latest) and extract it to:
+1. Download the `.zip` file from the latest [release](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/releases/latest) and extract it to:
    - `%LocalAppData%\Microsoft\PowerToys\PowerToys Run\Plugins`
 2. Restart PowerToys
 
