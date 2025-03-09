@@ -1,6 +1,8 @@
 # Community.PowerToys.Run.Plugin.Install
 
 [![Build](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/build.yml/badge.svg)](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/build.yml)
+[![Snyk Security Scan](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/snyk.yml/badge.svg)](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/snyk.yml)
+[![Mentioned in Awesome PowerToys Run Plugins](https://awesome.re/mentioned-badge.svg)](https://github.com/hlaueriksson/awesome-powertoys-run-plugins)
 
 > Install awesome community PowerToys Run plugins via this plugin ⬇️🔌📦
 
