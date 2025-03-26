@@ -137,7 +137,6 @@ namespace Generator.Tests
             }.Map(new Models.Plugin { Name = "Name" }).Assets.Should().BeEquivalentTo(
                 [
                     new Models.Asset { Name = "Foo.zip" },
-                    new Models.Asset { Name = "Bar.zip" }
                 ]);
 
             new Release
@@ -152,8 +151,35 @@ namespace Generator.Tests
             }.Map(new Models.Plugin { Name = "Name" }).Assets.Should().BeEquivalentTo(
                 [
                     new Models.Asset { Name = "Name-1.0.0-x64.zip" },
-                    new Models.Asset { Name = "Name-1.0.0-arm64.zip" }
+                    new Models.Asset { Name = "Name-1.0.0-arm64.zip" },
                 ]);
+
+            new Release
+            {
+                assets =
+                [
+                    new Asset { name = "Name-1.0.0-x64.zip" },
+                    new Asset { name = "Name-1.0.0-x64-SDK3.zip" },
+                    new Asset { name = "Name-1.0.0-arm64.zip" },
+                ]
+            }.Map(new Models.Plugin { Name = "Name" }).Assets.Should().BeEquivalentTo(
+                [
+                    new Models.Asset { Name = "Name-1.0.0-x64.zip" },
+                    new Models.Asset { Name = "Name-1.0.0-arm64.zip" },
+                ]);
+
+            new Release
+            {
+                assets =
+                [
+                    new Asset(),
+                ]
+            }.Map(new Models.Plugin { Name = "Name" }).Assets.Should().BeEmpty();
+
+            new Release
+            {
+                assets = []
+            }.Map(new Models.Plugin { Name = "Name" }).Assets.Should().BeEmpty();
 
             new Release().Map(new Models.Plugin()).Should().NotBeNull();
 

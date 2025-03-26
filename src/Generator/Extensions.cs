@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace Generator
@@ -123,7 +124,7 @@ namespace Generator
                 Name = release.name,
                 CreatedAt = release.created_at,
                 PublishedAt = release.published_at,
-                Assets = GetAssets().Select(Map),
+                Assets = GetAssets().Select(Map).SkipDupes(),
             };
 
             IEnumerable<Asset> GetAssets()
@@ -137,7 +138,7 @@ namespace Generator
 
                 return result?.Where(x => HasName(x, plugin.Name)) ?? [];
 
-                bool IsZipFile(Asset asset) => asset.name.EndsWith(".zip", StringComparison.OrdinalIgnoreCase);
+                bool IsZipFile(Asset asset) => asset.name?.EndsWith(".zip", StringComparison.OrdinalIgnoreCase) == true;
                 bool HasName(Asset asset, string name) => asset.name.Contains(name, StringComparison.OrdinalIgnoreCase);
             }
         }
@@ -154,6 +155,18 @@ namespace Generator
                 UpdatedAt = asset.updated_at,
             };
         }
+
+        private static IEnumerable<Models.Asset> SkipDupes(this IEnumerable<Models.Asset> assets)
+        {
+            return assets.GroupBy(x => x.Name.Platform()).Select(x => x.First());
+        }
+
+        private static string Platform(this string name) => name switch
+        {
+            _ when name.Contains(nameof(Architecture.Arm64), StringComparison.OrdinalIgnoreCase) => nameof(Architecture.Arm64),
+            _ when name.Contains(nameof(Architecture.X64), StringComparison.OrdinalIgnoreCase) => nameof(Architecture.X64),
+            _ => string.Empty,
+        };
 
         [GeneratedRegex(@"^https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/?$")]
         private static partial Regex GitHubRegex();

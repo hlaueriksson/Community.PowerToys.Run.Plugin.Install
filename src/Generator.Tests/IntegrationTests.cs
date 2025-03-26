@@ -171,6 +171,27 @@ namespace Generator.Tests
             result.Should().BeEmpty();
         }
 
+        [Test]
+        public async Task awesome_json_Release_Assets()
+        {
+            var awesome = JsonSerializer.Deserialize<Awesome>(File.ReadAllText(@"..\..\..\..\..\awesome.json"));
+
+            var client = new GitHubClient(new GitHubOptions { PersonalAccessToken = "" });
+
+            foreach (var plugin in awesome.Plugins)
+            {
+                Console.WriteLine($"{plugin.Name} {plugin.Website}");
+
+                var options = plugin.Website.GetGitHubRepositoryOptions();
+
+                var release = await client.GetLatestReleaseAsync(options);
+                plugin.Release = release?.Map(plugin);
+
+                plugin.Release.Assets.Should().HaveCountGreaterThanOrEqualTo(0);
+                plugin.Release.Assets.Should().HaveCountLessThanOrEqualTo(2);
+            }
+        }
+
         static (int ExitCode, string StandardOutput, string StandardError) Lint(string url)
         {
             var startInfo = new ProcessStartInfo
