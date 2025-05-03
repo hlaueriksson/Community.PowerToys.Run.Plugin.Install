@@ -1,5 +1,13 @@
 # Community.PowerToys.Run.Plugin.Install
 
+TODO:
+open settings, with arg
+https://github.com/microsoft/PowerToys/blob/main/src/settings-ui/Settings.UI/SettingsXAML/App.xaml.cs
+c:\Program Files\PowerToys\WinUI3Apps\PowerToys.Settings.exe
+case "Run": return typeof(PowerLauncherPage);
+https://github.com/microsoft/PowerToys/blob/0d71f11fdc63c0a8e8f7c4618504c2cc99d78806/src/common/Common.UI/SettingsDeepLink.cs#L90
+PowerToys.exe --open-settings=Run
+
 [![Build](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/build.yml/badge.svg)](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/build.yml)
 [![Snyk Security Scan](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/snyk.yml/badge.svg)](https://github.com/hlaueriksson/Community.PowerToys.Run.Plugin.Install/actions/workflows/snyk.yml)
 [![Mentioned in Awesome PowerToys Run Plugins](https://awesome.re/mentioned-badge.svg)](https://github.com/hlaueriksson/awesome-powertoys-run-plugins)
