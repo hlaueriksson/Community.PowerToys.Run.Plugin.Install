@@ -197,6 +197,41 @@
       "Description": "Browse, search and view streams on Twitch.",
       "Author": "hlaueriksson",
       "Website": "https://github.com/hlaueriksson/Community.PowerToys.Run.Plugins#twitch"
+    },
+    {
+      "ID": "6401d691f1044a1b9558087abe8b84a2",
+      "Name": "SVGL",
+      "Description": "Browse, search, and copy SVG logos via svgl.",
+      "Author": "SameerJS6",
+      "Website": "https://github.com/SameerJS6/powertoys-svgl"
+    },
+    {
+      "ID": "2083308C581F4D36B0C02E69A2FD91D7",
+      "Name": "QuickNotes",
+      "Description": "Create, manage, and search notes.",
+      "Author": "ruslanlap",
+      "Website": "https://github.com/ruslanlap/CommunityPowerToysRunPlugin-QuickNotes"
+    },
+    {
+      "ID": "5A0F7ED1D3F24B0A900732839D0E43DB",
+      "Name": "SpeedTest",
+      "Description": "Test your internet connection speed.",
+      "Author": "ruslanlap",
+      "Website": "https://github.com/ruslanlap/PowerToysRun-SpeedTest"
+    },
+    {
+      "ID": "B8F9B9F5C3E44A8B9F1F2E3D4C5B6A7B",
+      "Name": "VideoDownloader",
+      "Description": "Download videos from various platforms.",
+      "Author": "ruslanlap",
+      "Website": "https://github.com/ruslanlap/PowerToysRun-VideoDownloader"
+    },
+    {
+      "ID": "AF6979212B9D429489F115EE3390D608",
+      "Name": "Definition",
+      "Description": "Lookup word definitions, phonetics, and synonyms.",
+      "Author": "ruslanlap",
+      "Website": "https://github.com/ruslanlap/PowerToysRun-Definition"
     }
   ]
 }
