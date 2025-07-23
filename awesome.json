@@ -232,6 +232,20 @@
       "Description": "Lookup word definitions, phonetics, and synonyms.",
       "Author": "ruslanlap",
       "Website": "https://github.com/ruslanlap/PowerToysRun-Definition"
+    },
+    {
+      "ID": "EFADBA167C1B41D8A7426A7DF808D28E",
+      "Name": "RandomGen",
+      "Description": "Generate various types of random data.",
+      "Author": "ruslanlap",
+      "Website": "https://github.com/ruslanlap/PowerToysRun-RandomGen"
+    },
+    {
+      "ID": "4BDC7426E3404ECDB2D502B7B3CEAD9F",
+      "Name": "Hotkeys",
+      "Description": "Find and copy keyboard shortcuts for various applications.",
+      "Author": "ruslanlap",
+      "Website": "https://github.com/ruslanlap/PowerToysRun-Hotkeys"
     }
   ]
 }
