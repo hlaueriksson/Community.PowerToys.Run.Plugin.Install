@@ -9,9 +9,38 @@ using Microsoft.Playwright;
 
 namespace Generator.Tests
 {
+    /// <summary>
+    /// Prerequisites:
+    ///
+    /// 1. Create a <c>local.settings.json</c> file
+    /// 2. Set the <c>GitHubPersonalAccessToken</c> and <c>VirusTotalApiKey</c>
+    /// 3. Run the <see cref="Auth"/> test and authenticate with GitHub
+    /// </summary>
+    /// <example>
+    /// local.settings.json:
+    /// 
+    /// <code>
+    /// {
+    ///  "IntegrationTests": {
+    ///   "GitHubPersonalAccessToken": "github_pat_",
+    ///   "VirusTotalApiKey": "abc123"
+    ///  }
+    /// }
+    /// </code>
+    /// </example>
     [Explicit, Category("Integration")]
     public class IntegrationTests
     {
+        private IConfigurationRoot _config;
+
+        [SetUp]
+        public void Setup()
+        {
+            _config = new ConfigurationBuilder()
+                .AddJsonFile("local.settings.json")
+                .Build();
+        }
+
         [Test]
         public async Task Auth()
         {
@@ -97,6 +126,9 @@ namespace Generator.Tests
         [Test]
         public void awesome_json_lint()
         {
+            // PAT
+            Lint(_config.GetValue<string>("IntegrationTests:GitHubPersonalAccessToken"));
+
             var awesome = JsonSerializer.Deserialize<Awesome>(File.ReadAllText(@"..\..\..\..\..\awesome.json"));
 
             var result = new List<string>();
@@ -122,17 +154,12 @@ namespace Generator.Tests
         [Test]
         public async Task awesome_json_VirusTotal()
         {
-            // dotnet run --project ./src/Generator -- "awesome.json" "./.pages/awesome.json" "github_pat_"
-
-            var config = new ConfigurationBuilder()
-                .AddJsonFile("local.settings.json")
-                .Build();
-
+            Generate();
             var awesome = JsonSerializer.Deserialize<Awesome>(File.ReadAllText(@"..\..\..\..\..\.pages\awesome.json"));
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("accept", "application/json");
-            client.DefaultRequestHeaders.Add("x-apikey", config.GetValue<string>("IntegrationTests:VirusTotalApiKey"));
+            client.DefaultRequestHeaders.Add("x-apikey", _config.GetValue<string>("IntegrationTests:VirusTotalApiKey"));
             var url = "https://www.virustotal.com/api/v3/urls";
 
             var result = new List<string>();
@@ -176,7 +203,7 @@ namespace Generator.Tests
         {
             var awesome = JsonSerializer.Deserialize<Awesome>(File.ReadAllText(@"..\..\..\..\..\awesome.json"));
 
-            var client = new GitHubClient(new GitHubOptions { PersonalAccessToken = "" });
+            var client = new GitHubClient(new GitHubOptions { PersonalAccessToken = _config.GetValue<string>("IntegrationTests:GitHubPersonalAccessToken") });
 
             foreach (var plugin in awesome.Plugins)
             {
@@ -192,12 +219,32 @@ namespace Generator.Tests
             }
         }
 
-        static (int ExitCode, string StandardOutput, string StandardError) Lint(string url)
+        static (int ExitCode, string StandardOutput, string StandardError) Lint(string args)
         {
             var startInfo = new ProcessStartInfo
             {
                 FileName = "ptrun-lint",
-                Arguments = url,
+                Arguments = args,
+                WindowStyle = ProcessWindowStyle.Hidden,
+                CreateNoWindow = false,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                StandardOutputEncoding = Encoding.UTF8,
+                StandardErrorEncoding = Encoding.UTF8,
+            };
+            using var exeProcess = Process.Start(startInfo);
+            exeProcess!.WaitForExit();
+            return new(exeProcess.ExitCode, exeProcess.StandardOutput.ReadToEnd(), exeProcess.StandardError.ReadToEnd());
+        }
+
+        (int ExitCode, string StandardOutput, string StandardError) Generate()
+        {
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = "dotnet",
+                Arguments = $"run --project ./src/Generator -- \"awesome.json\" \"./.pages/awesome.json\" \"{_config.GetValue<string>("IntegrationTests:GitHubPersonalAccessToken")}\"",
+                WorkingDirectory = Path.GetFullPath(@"..\..\..\..\..\"),
                 WindowStyle = ProcessWindowStyle.Hidden,
                 CreateNoWindow = false,
                 UseShellExecute = false,
