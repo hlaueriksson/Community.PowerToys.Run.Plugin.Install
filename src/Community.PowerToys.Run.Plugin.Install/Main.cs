@@ -164,8 +164,8 @@ namespace Community.PowerToys.Run.Plugin.Install
             {
                 PluginName = Name,
                 Title = "Install plugin (Ctrl+Enter)",
-                FontFamily = "Segoe MDL2 Assets",
                 Glyph = "\xE896", // Download
+                FontFamily = "Segoe Fluent Icons,Segoe MDL2 Assets",
                 AcceleratorKey = Key.Enter,
                 AcceleratorModifiers = ModifierKeys.Control,
                 Action = _ => Handler.InstallPlugin(pair),
@@ -174,8 +174,8 @@ namespace Community.PowerToys.Run.Plugin.Install
             {
                 PluginName = Name,
                 Title = "Update plugin (Ctrl+Enter)",
-                FontFamily = "Segoe MDL2 Assets",
                 Glyph = "\xE777", // UpdateRestore
+                FontFamily = "Segoe Fluent Icons,Segoe MDL2 Assets",
                 AcceleratorKey = Key.Enter,
                 AcceleratorModifiers = ModifierKeys.Control,
                 Action = _ => Handler.UpdatePlugin(pair),
@@ -184,8 +184,8 @@ namespace Community.PowerToys.Run.Plugin.Install
             {
                 PluginName = Name,
                 Title = "Uninstall plugin (Ctrl+Del)",
-                FontFamily = "Segoe MDL2 Assets",
                 Glyph = "\xE74D", // Delete
+                FontFamily = "Segoe Fluent Icons,Segoe MDL2 Assets",
                 AcceleratorKey = Key.Delete,
                 AcceleratorModifiers = ModifierKeys.Control,
                 Action = _ => Handler.UninstallPlugin(pair),
@@ -194,8 +194,8 @@ namespace Community.PowerToys.Run.Plugin.Install
             {
                 PluginName = Name,
                 Title = "Open repo (Enter)",
-                FontFamily = "Segoe MDL2 Assets",
                 Glyph = "\xE82D", // Dictionary
+                FontFamily = "Segoe Fluent Icons,Segoe MDL2 Assets",
                 /*AcceleratorKey = Key.Enter,*/
                 Action = _ => Handler.OpenRepo(pair),
             };
@@ -203,8 +203,8 @@ namespace Community.PowerToys.Run.Plugin.Install
             {
                 PluginName = Name,
                 Title = "Open release notes (Ctrl+N)",
-                FontFamily = "Segoe MDL2 Assets",
                 Glyph = "\xF000", // KnowledgeArticle
+                FontFamily = "Segoe Fluent Icons,Segoe MDL2 Assets",
                 AcceleratorKey = Key.N,
                 AcceleratorModifiers = ModifierKeys.Control,
                 Action = _ => Handler.OpenReleaseNotes(pair),
@@ -213,8 +213,8 @@ namespace Community.PowerToys.Run.Plugin.Install
             {
                 PluginName = Name,
                 Title = "Open plugin folder (Ctrl+F)",
-                FontFamily = "Segoe MDL2 Assets",
                 Glyph = "\xED25", // OpenFolderHorizontal
+                FontFamily = "Segoe Fluent Icons,Segoe MDL2 Assets",
                 AcceleratorKey = Key.F,
                 AcceleratorModifiers = ModifierKeys.Control,
                 Action = _ => Handler.OpenPluginFolder(pair),
