@@ -25,7 +25,7 @@ namespace Community.PowerToys.Run.Plugin.Install.Models
                     return Assets.First();
                 }
 
-                return Assets.SingleOrDefault(x => x.Name?.Contains(Platform(), StringComparison.OrdinalIgnoreCase) == true);
+                return Assets.FirstOrDefault(x => x.Name?.Contains(Platform(), StringComparison.OrdinalIgnoreCase) == true);
 
                 string Platform() => RuntimeInformation.ProcessArchitecture.ToString();
                 string OppositePlatform()
