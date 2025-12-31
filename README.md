@@ -16,7 +16,7 @@ Plugin source:
 
 ## Installation
 
-This plugin has been developed and tested with PowerToys `v0.87.1`.
+This plugin has been developed and tested with PowerToys `v0.96.1`.
 
 Prerequisites:
 
